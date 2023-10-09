@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: highdemo2 
+  #namespace: hdu
+  labels:
+      app: rotf30
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+            #nodeSelector:
+            #kubernets.io/hostname: shuguang03
+      priorityClassName: high-priority
+      restartPolicy: OnFailure
+      containers:
+      - name: nginx
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "100Mi"
+            cpu: "100m"
+            mlu270.com/i915: "2"
+          requests:
+            memory: "100Mi" 
+            cpu: "100m" 
+            mlu270.com/i915: "2"   
+    # 其他配置项
+    # ...

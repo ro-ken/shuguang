@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rotf2-1t
+  labels:
+    app: rotf2
+spec:
+  containers:
+  - name: rotf2-container
+    image: rotf2:latest
+    imagePullPolicy: Never
+    resources:
+      requests:
+        memory: "2Gi"
+        cpu: "1"
+      limits:
+        memory: "2Gi"
+        cpu: "1"
+  nodeSelector:
+    kubernetes.io/hostname: haiguang-96
+  restartPolicy: Never

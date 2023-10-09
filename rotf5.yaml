@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cloudhost
+spec:
+  containers:
+  - name: ubuntu-container-1
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-2
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-3
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-4
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-5
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-6
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-7
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-8
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-9
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  - name: ubuntu-container-10
+    image: ubuntu:20.04
+    imagePullPolicy: Never
+    command: ["/bin/sleep"]
+    args: ["3600"]
+  nodeSelector:
+    kubernetes.io/hostname: haiguang-91
+  restartPolicy: Never
+  initContainers:
+  - name: roinit
+    image: roinit:latest
+    imagePullPolicy: Never

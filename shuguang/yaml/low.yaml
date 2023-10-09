@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: lowdemo
+  namespace: hdu
+  labels:
+      app: rotf30
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+            #nodeSelector:
+            #kubernets.io/hostname: haiguang-91
+      priorityClassName: low-priority
+      restartPolicy: OnFailure
+      containers:
+      - name: rotf30
+        image: rq62680/rotf30:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "100Mi"
+            cpu: "100m"
+            mlu270.com/i915: "3"
+          requests:
+            memory: "100Mi" 
+            cpu: "100m" 
+            mlu270.com/i915: "3"   
+    # 其他配置项
+    # ...

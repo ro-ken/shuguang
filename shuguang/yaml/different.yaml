@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo
+  namespace: hdu
+  labels:
+      app: rotf30
+spec:
+  restartPolicy: OnFailure
+  # priorityClassName: hdu-priority
+  containers:
+  - name: rotf30
+    image: rq62680/rotf30:latest
+    imagePullPolicy: IfNotPresent
+    resources:
+        limits:
+            cpu: "1200m" 
+            memory: "1200Mi"
+            ephemeral-storage: "10Gi"
+            # mlu270.com/i915: "3"
+        requests:
+            cpu: "500m" 
+            memory: "500Mi" 
+            ephemeral-storage: "1Gi"
+            # mlu270.com/i915: "3"   
+    # 其他配置项
+    # ...
